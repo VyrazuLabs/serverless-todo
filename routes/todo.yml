@@ -12,6 +12,13 @@ TodoGetall:
         path: controllers/getall
         method: get
 
+TodoUpdate:
+  handler: controller/updateTodo.lambdaHandler
+  events:
+    - http:
+        path: controllers/update/{id}
+        method: put
+
 TodoDelete:
   handler: controller/deleteTodo.lambdaHandler
   events:
