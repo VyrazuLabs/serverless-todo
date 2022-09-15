@@ -1,5 +1,15 @@
 # Serverless-ToDO
 
+This project contains source code and supporting files for a Serverless Framework that is used to orchestrate Lambda backend. It includes the following files and folders.
+
+- connection - It contains the code for connection with postgres.
+- controller/addTodo - It contains code to add events in the Todolist.
+- controller/deleteTodo - It contains the code to delete an event from the Todolist.
+- controller/ getAllTodo - It contains the code to see all events.
+- controller/updateTodo - It contains the code to update any event.
+- model - It contains the model of the Todolist.
+- route - It contains the endpoint point of lambda handlers and path to hit it. 
+- serverless.yaml - A template that has the plugins and it is the root file.
 
 
 ## Getting started
@@ -19,7 +29,42 @@ git remote add origin https://gitlab.com/Ajay.kr/serverless-todo.git
 git branch -M main
 git push -uf origin main
 ```
+## To Start
+You need to run following command to install serverless framework and serverless-offline:
+```bash
+wedo-auth-backend$ npm install -g serverless
+wedo-auth-backend$ npm install serverless-offline
+```
+## How to run :
+Type " sls offline or serverless offline " to run the code. 
+```
+anand@vyrazu:/var/www/html/serverless-todo$ sls offline
 
+Starting Offline at stage dev (us-east-1)
+
+Offline [http for lambda] listening on http://localhost:3002
+Function names exposed for local invocation by aws-sdk:
+           * TodoAdd: todo-dev-TodoAdd
+           * TodoGetall: todo-dev-TodoGetall
+           * TodoUpdate: todo-dev-TodoUpdate
+           * TodoDelete: todo-dev-TodoDelete
+
+   ┌────────────────────────────────────────────────────────────────────────────────┐
+   │                                                                                │
+   │   POST   | http://localhost:3000/dev/controllers/add                           │
+   │   POST   | http://localhost:3000/2015-03-31/functions/TodoAdd/invocations      │
+   │   GET    | http://localhost:3000/dev/controllers/getall                        │
+   │   POST   | http://localhost:3000/2015-03-31/functions/TodoGetall/invocations   │
+   │   PUT    | http://localhost:3000/dev/controllers/update/{id}                   │
+   │   POST   | http://localhost:3000/2015-03-31/functions/TodoUpdate/invocations   │
+   │   DELETE | http://localhost:3000/dev/controllers/delete/{id}                   │
+   │   POST   | http://localhost:3000/2015-03-31/functions/TodoDelete/invocations   │
+   │                                                                                │
+   └────────────────────────────────────────────────────────────────────────────────┘
+
+Server ready: http://localhost:3000 🚀
+
+```
 ## Integrate with your tools
 
 - [ ] [Set up project integrations](https://gitlab.com/Ajay.kr/serverless-todo/-/settings/integrations)
@@ -90,3 +135,4 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+
