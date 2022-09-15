@@ -1,0 +1,6 @@
+TodoAdd:
+  handler: controller/addTodo.lambdaHandler
+  events:
+    - http:
+        path: controllers/add
+        method: post
