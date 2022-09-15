@@ -4,3 +4,10 @@ TodoAdd:
     - http:
         path: controllers/add
         method: post
+
+TodoGetall:
+  handler: controllers/getalltodo.lambdaHandler
+  events:
+    - http:
+        path: controllers/getall
+        method: get
