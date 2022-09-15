@@ -12,8 +12,26 @@ module.exports.lambdaHandler = async (event, context) => {
       { taskName, time },
       { where: { id } }
     );
-    
-} catch (err) {
+    const updatedData = await Todolist.findOne({
+      attributes: ["id", "taskName", "time"],
+      where: { id },
+    });
+    if (updatedlist == 1) {
+      return {
+        statusCode: 201,
+        body: JSON.stringify({
+          success: true,
+          message: "Updated Successfully",
+          updatedData,
+        }),
+      };
+    } else {
+      return {
+        statusCode: 404,
+        body: JSON.stringify({ message: "Id not found" }),
+      };
+    }
+  } catch (err) {
     return {
       body: JSON.stringify(err),
     };
