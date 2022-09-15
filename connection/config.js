@@ -1,6 +1,5 @@
 const Sequelize = require("sequelize");
 
-
 const sequelize = new Sequelize("postgres", "postgres", "hello", {
   host: "localhost",
   dialect: "postgres",
@@ -24,4 +23,4 @@ db.todolist = require("../model/Todo")(sequelize, Sequelize);
 // sequelize.sync({ force: true });
 // console.log("All models were synchronized successfully.");
 
-module.exports = db
+module.exports = db;
