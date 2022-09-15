@@ -15,5 +15,13 @@ try {
   console.error("Unable to connect to the database:", error);
 }
 
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+db.todolist = require("../model/Todo")(sequelize, Sequelize);
 // sequelize.sync({ force: true });
 // console.log("All models were synchronized successfully.");
+
+module.exports = db
