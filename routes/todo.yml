@@ -6,8 +6,15 @@ TodoAdd:
         method: post
 
 TodoGetall:
-  handler: controllers/getalltodo.lambdaHandler
+  handler: controller/getAllTodo.lambdaHandler
   events:
     - http:
         path: controllers/getall
         method: get
+
+TodoDelete:
+  handler: controller/deleteTodo.lambdaHandler
+  events:
+    - http:
+        path: controllers/delete/{id}
+        method: delete
