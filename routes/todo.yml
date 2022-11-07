@@ -1,0 +1,27 @@
+TodoAdd:
+  handler: controller/addTodo.lambdaHandler
+  events:
+    - http:
+        path: controllers/add
+        method: post
+
+TodoGetall:
+  handler: controller/getAllTodo.lambdaHandler
+  events:
+    - http:
+        path: controllers/getall
+        method: get
+
+TodoUpdate:
+  handler: controller/updateTodo.lambdaHandler
+  events:
+    - http:
+        path: controllers/update/{id}
+        method: put
+
+TodoDelete:
+  handler: controller/deleteTodo.lambdaHandler
+  events:
+    - http:
+        path: controllers/delete/{id}
+        method: delete
